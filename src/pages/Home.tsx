@@ -1,6 +1,10 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import ServiceCard from '@/components/ServiceCard';
+import { services } from '@/data/services';
+import { useInView } from '@/hooks/use-in-view';
+import { cn } from '@/lib/utils';
 
 const Home = () => {
   const scrollToSection = (id: string) => {
@@ -9,6 +13,9 @@ const Home = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const [aboutRef, aboutInView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [servicesRef, servicesInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -41,8 +48,8 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-card text-card-foreground">
-        <div className="container mx-auto px-4 text-center">
+      <section id="about" ref={aboutRef} className="py-20 bg-card text-card-foreground">
+        <div className={cn("container mx-auto px-4 text-center", aboutInView ? "animate-fade-in-up" : "opacity-0")}>
           <h2 className="text-4xl font-bold mb-6 text-primary">About Us</h2>
           <p className="text-lg max-w-3xl mx-auto">
             Our mission is to empower businesses with exceptional digital solutions. We combine creativity, technology, and strategic thinking to deliver unparalleled web experiences.
@@ -52,13 +59,17 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-background text-foreground">
-        <div className="container mx-auto px-4 text-center">
+      <section id="services" ref={servicesRef} className="py-20 bg-background text-foreground">
+        <div className={cn("container mx-auto px-4 text-center", servicesInView ? "animate-fade-in-up" : "opacity-0")}>
           <h2 className="text-4xl font-bold mb-6 text-primary">Our Services</h2>
           <p className="text-lg max-w-3xl mx-auto mb-10">
             From stunning web design to powerful digital marketing, we offer a full suite of services to elevate your brand.
           </p>
-          {/* Service cards with hover animations and modal popups will go here */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </div>
         </div>
       </section>
 
