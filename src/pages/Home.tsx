@@ -8,7 +8,7 @@ import ValueCard from '@/components/ValueCard';
 import { values } from '@/data/values';
 import ServiceCard from '@/components/ServiceCard';
 import { services } from '@/data/services';
-import * as LucideIcons from 'lucide-react'; // Corrected import statement
+import * as LucideIcons from 'lucide-react';
 import { teamMembers } from '@/data/team';
 import { testimonials } from '@/data/testimonials';
 
@@ -38,10 +38,12 @@ const Home = () => {
       <section id="hero" className="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-neon-blue-200 to-neon-purple-200">
         <div className="absolute inset-0 bg-gradient-to-br from-neon-blue-600 to-neon-purple-600 animate-gradient-shift opacity-25"></div>
         <div className="relative z-10 p-8 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-foreground mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
             Innovate. Create. Dominate.
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+          {/* Radiant effect below the H1 */}
+          <div className="absolute left-1/2 -translate-x-1/2 w-3/4 h-24 -bottom-8 bg-radial-gradient from-neon-blue-400/50 to-neon-purple-400/0 blur-3xl opacity-70 pointer-events-none"></div>
+          <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto">
             NeuraFlow is a premium digital agency crafting cutting-edge web experiences that drive results.
           </p>
           <Link to="/contact">
@@ -55,7 +57,7 @@ const Home = () => {
         <div className="absolute bottom-8 z-10">
           <Button
             variant="ghost"
-            className="text-foreground animate-bounce"
+            className="text-white animate-bounce"
             onClick={() => scrollToSection('about-preview')}
           >
             <ArrowDown size={32} />
