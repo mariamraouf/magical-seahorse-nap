@@ -99,3 +99,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom styles for gradient animation */
+.animate-gradient-shift {
+  background-size: 400% 400%;
+}
