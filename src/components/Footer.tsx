@@ -23,16 +23,16 @@ const Footer = () => {
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
           <div className="flex space-x-4">
-            <a href="#" className="text-muted-foreground hover:text-neon-blue-400 transition-colors duration-300">
+            <a href="#" className="text-muted-foreground hover:text-neon-blue-600 transition-colors duration-300">
               <Facebook size={24} />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-neon-blue-400 transition-colors duration-300">
+            <a href="#" className="text-muted-foreground hover:text-neon-blue-600 transition-colors duration-300">
               <Twitter size={24} />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-neon-blue-400 transition-colors duration-300">
+            <a href="#" className="text-muted-foreground hover:text-neon-blue-600 transition-colors duration-300">
               <Instagram size={24} />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-neon-blue-400 transition-colors duration-300">
+            <a href="#" className="text-muted-foreground hover:text-neon-blue-600 transition-colors duration-300">
               <Linkedin size={24} />
             </a>
           </div>

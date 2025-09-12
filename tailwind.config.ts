@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
+  darkMode: ["class"], // Keep dark mode for potential future toggle, but default to light-ish
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -19,6 +19,7 @@ export default {
     },
     extend: {
       colors: {
+        // New vibrant, light-themed colors
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -52,7 +53,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom neon colors for NeuraFlow
+        // Custom neon colors for NeuraFlow (adjusted for better contrast on light background)
         "neon-blue": {
           50: "#eef2ff",
           100: "#e0e7ff",
